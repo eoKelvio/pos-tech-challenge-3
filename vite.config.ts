@@ -4,5 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/pos-tech-challenge-3/',
   plugins: [react(), tailwindcss()],
 })
