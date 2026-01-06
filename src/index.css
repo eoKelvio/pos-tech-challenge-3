@@ -1,0 +1,13 @@
+@tailwind utilities;
+
+@import "tailwindcss";
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  background-color: hsl(0, 0%, 96.1%);
+}
+
+#root {
+  height: 100%;
+}
