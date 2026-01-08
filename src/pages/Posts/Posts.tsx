@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Pencil, Trash2, Eye } from 'lucide-react';
-import { usePosts } from '../../hooks/usePosts';
-import { useAuth } from '../../hooks/useAuth';
+import { useFetchAllPosts, useFetchActivePosts, useDeletePost } from '../../hooks/usePosts';
+import { useFetchMe } from '../../hooks/useAuth';
 import type { Post } from '../../types/Posts';
 import { CreatePostModal } from '../../components/modals/create/CreatePostModal';
 import { UpdatePostModal } from '../../components/modals/update/UpdatePostModal';
@@ -12,15 +12,14 @@ import { Footer } from '../../components/common/Footer';
 
 export const Posts = () => {
   const navigate = useNavigate();
-  const { fetchAllPosts, fetchActivePosts, deletePost } = usePosts();
-  const { fetchMe } = useAuth();
+  const deletePostMutation = useDeletePost();
 
   const token = localStorage.getItem('access_token');
   const isAuthenticated = !!token;
 
-  const allPostsQuery = fetchAllPosts();
-  const activePostsQuery = fetchActivePosts();
-  const meQuery = fetchMe();
+  const allPostsQuery = useFetchAllPosts();
+  const activePostsQuery = useFetchActivePosts();
+  const meQuery = useFetchMe();
 
   const { data: allPosts } = allPostsQuery;
   const { data: activePosts } = activePostsQuery;
@@ -37,7 +36,7 @@ export const Posts = () => {
   const handleDelete = async (id: number) => {
     if (window.confirm('Tem certeza que deseja deletar este post? Apenas posts inativos podem ser deletados.')) {
       try {
-        await deletePost(id);
+        await deletePostMutation.mutateAsync(id);
       } catch (error) {
         console.error('Erro ao deletar post:', error);
         alert('Falha ao deletar post. Certifique-se de que o post está inativo.');

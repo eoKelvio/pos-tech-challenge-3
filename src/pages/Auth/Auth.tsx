@@ -1,15 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Mail, Lock, User, BookOpen } from 'lucide-react';
-import { useAuth } from '../../hooks/useAuth';
+import { useSignUp, useSignIn } from '../../hooks/useAuth';
 import type { SignUpPayload, SignInPayload } from '../../types/Users';
 import { Footer } from '../../components/common/Footer';
 
 const Auth = () => {
   const navigate = useNavigate();
-  const { signUp, signIn } = useAuth();
-  const signUpMutation = signUp();
-  const signInMutation = signIn();
+  const signUpMutation = useSignUp();
+  const signInMutation = useSignIn();
 
   const [isSignUp, setIsSignUp] = useState(false);
   const [error, setError] = useState('');
@@ -45,8 +44,12 @@ const Auth = () => {
       setIsSignUp(false);
       setSignUpData({ name: '', email: '', password: '' });
       setError('');
-    } catch (err: any) {
-      setError(err.response?.data?.message?.[0] || 'Falha ao criar conta');
+    } catch (err) {
+      const error = err as { response?: { data?: { message?: string[] | string } } };
+      const message = Array.isArray(error.response?.data?.message)
+        ? error.response.data.message[0]
+        : error.response?.data?.message || 'Falha ao criar conta';
+      setError(message);
     }
   };
 
@@ -64,8 +67,9 @@ const Auth = () => {
       setTimeout(() => {
         navigate('/posts');
       }, 100);
-    } catch (err: any) {
-      setError(err.response?.data?.message || 'Credenciais inválidas');
+    } catch (err) {
+      const error = err as { response?: { data?: { message?: string } } };
+      setError(error.response?.data?.message || 'Credenciais inválidas');
     }
   };
 

@@ -5,7 +5,6 @@ const api = axios.create({
   timeout: 10000,
 });
 
-// Interceptor para adicionar o token em todas as requisições
 api.interceptors.request.use((config) => {
   const accessToken = localStorage.getItem('access_token');
   if (accessToken) {
@@ -14,7 +13,6 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Interceptor para tratar erros 401
 api.interceptors.response.use(
   (response) => response,
   async (error) => {
