@@ -130,7 +130,7 @@ Navigate to `http://localhost:5173`
 ## Design
 
 ### Auth Page
-- Clean gradient background (blue to purple)
+- Clean gradient background (blue to red)
 - Toggle between Sign In and Sign Up
 - Form validation
 - Error handling
@@ -162,13 +162,13 @@ The app uses React Query for efficient server state management:
 
 ## Color Scheme
 
-- **Primary**: Blue (#2563EB) to Purple (#9333EA) gradient
+- **Primary**: Blue (#2563EB) to red (#9333EA) gradient
 - **Background**: Light gray gradient (#F9FAFB to #F3F4F6)
 - **Cards**: White with subtle shadows
 - **Text**: Gray scale (900, 700, 600, 500)
 - **Status Badges**:
   - PUBLIC: Blue (#3B82F6)
-  - PRIVATE: Purple (#A855F7)
+  - PRIVATE: red (#A855F7)
   - ACTIVE: Green (#10B981)
   - INACTIVE: Red (#EF4444)
 

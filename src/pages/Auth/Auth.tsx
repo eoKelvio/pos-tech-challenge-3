@@ -74,16 +74,16 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-red-50 to-rose-50">
       <div className="flex-1 flex items-center justify-center p-4 py-12">
         <div className="w-full max-w-md">
           {/* Logo */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-3 mb-4">
-              <div className="bg-gradient-to-br from-indigo-600 to-purple-600 p-3 rounded-xl shadow-lg">
+              <div className="bg-[#EC145A] p-3 rounded-xl shadow-lg">
                 <BookOpen className="text-white" size={32} />
               </div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold text-[#EC145A]">
                 Blog Tech
               </h1>
             </div>
@@ -102,7 +102,7 @@ const Auth = () => {
                 }}
                 className={`flex-1 py-4 text-center font-semibold transition-all ${
                   !isSignUp
-                    ? 'text-indigo-600 border-b-2 border-indigo-600 bg-indigo-50'
+                    ? 'text-[#EC145A] border-b-2 border-[#EC145A] bg-red-50'
                     : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'
                 }`}
               >
@@ -115,7 +115,7 @@ const Auth = () => {
                 }}
                 className={`flex-1 py-4 text-center font-semibold transition-all ${
                   isSignUp
-                    ? 'text-indigo-600 border-b-2 border-indigo-600 bg-indigo-50'
+                    ? 'text-[#EC145A] border-b-2 border-[#EC145A] bg-red-50'
                     : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'
                 }`}
               >
@@ -144,7 +144,7 @@ const Auth = () => {
                         value={signUpData.name}
                         onChange={(e) => setSignUpData({ ...signUpData, name: e.target.value })}
                         placeholder="João Silva"
-                        className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EC145A] focus:border-transparent transition-all"
                         required
                       />
                     </div>
@@ -161,7 +161,7 @@ const Auth = () => {
                         value={signUpData.email}
                         onChange={(e) => setSignUpData({ ...signUpData, email: e.target.value })}
                         placeholder="joao@exemplo.com"
-                        className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EC145A] focus:border-transparent transition-all"
                         required
                       />
                     </div>
@@ -178,7 +178,7 @@ const Auth = () => {
                         value={signUpData.password}
                         onChange={(e) => setSignUpData({ ...signUpData, password: e.target.value })}
                         placeholder="Pelo menos 6 caracteres"
-                        className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EC145A] focus:border-transparent transition-all"
                         required
                         minLength={6}
                       />
@@ -188,7 +188,7 @@ const Auth = () => {
                   <button
                     type="submit"
                     disabled={signUpMutation.isPending}
-                    className="w-full py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-lg hover:from-indigo-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg mt-6"
+                    className="w-full py-3.5 bg-[#EC145A] text-white font-semibold rounded-lg hover:bg-[#d11350] disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg mt-6"
                   >
                     {signUpMutation.isPending ? 'Criando Conta...' : 'Criar Conta'}
                   </button>
@@ -206,7 +206,7 @@ const Auth = () => {
                         value={signInData.email}
                         onChange={(e) => setSignInData({ ...signInData, email: e.target.value })}
                         placeholder="joao@exemplo.com"
-                        className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EC145A] focus:border-transparent transition-all"
                         required
                       />
                     </div>
@@ -223,7 +223,7 @@ const Auth = () => {
                         value={signInData.password}
                         onChange={(e) => setSignInData({ ...signInData, password: e.target.value })}
                         placeholder="Digite sua senha"
-                        className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                        className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#EC145A] focus:border-transparent transition-all"
                         required
                       />
                     </div>
@@ -232,7 +232,7 @@ const Auth = () => {
                   <button
                     type="submit"
                     disabled={signInMutation.isPending}
-                    className="w-full py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-lg hover:from-indigo-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg mt-6"
+                    className="w-full py-3.5 bg-[#EC145A] text-white font-semibold rounded-lg hover:bg-[#d11350] disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg mt-6"
                   >
                     {signInMutation.isPending ? 'Entrando...' : 'Entrar'}
                   </button>
@@ -244,7 +244,7 @@ const Auth = () => {
                 <p className="text-sm text-slate-600 mb-3">ou</p>
                 <button
                   onClick={() => navigate('/posts')}
-                  className="text-indigo-600 hover:text-indigo-700 font-semibold text-sm transition-colors"
+                  className="text-[#EC145A] hover:text-[#d11350] font-semibold text-sm transition-colors"
                 >
                   Ver Posts Públicos →
                 </button>

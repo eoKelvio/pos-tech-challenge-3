@@ -20,7 +20,7 @@ export const ViewPostModal = ({ isOpen, onClose, post }: ViewPostModalProps) => 
               <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                 post.type === 'PUBLIC'
                   ? 'bg-blue-100 text-blue-700'
-                  : 'bg-purple-100 text-purple-700'
+                  : 'bg-red-100 text-red-700'
               }`}>
                 {post.type === 'PUBLIC' ? 'PÚBLICO' : 'PRIVADO'}
               </span>

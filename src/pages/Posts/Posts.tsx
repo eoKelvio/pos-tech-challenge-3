@@ -66,7 +66,7 @@ export const Posts = () => {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-white to-indigo-50">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 via-white to-red-50">
       <Header
         isAuthenticated={isAuthenticated}
         currentUserName={currentUser?.name}
@@ -88,14 +88,14 @@ export const Posts = () => {
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-3">
                     <div className="flex-1">
-                      <h2 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+                      <h2 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-red-600 transition-colors">
                         {post.title}
                       </h2>
                       <div className="flex gap-2 items-center flex-wrap">
                         <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                           post.type === 'PUBLIC'
-                            ? 'bg-indigo-100 text-indigo-700'
-                            : 'bg-purple-100 text-purple-700'
+                            ? 'bg-red-100 text-red-700'
+                            : 'bg-red-100 text-red-700'
                         }`}>
                           {post.type === 'PUBLIC' ? 'PÚBLICO' : 'PRIVADO'}
                         </span>
@@ -119,7 +119,7 @@ export const Posts = () => {
                       <div className="flex gap-2 ml-4">
                         <button
                           onClick={() => handleView(post)}
-                          className="p-2.5 text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
+                          className="p-2.5 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                           title="Visualizar"
                         >
                           <Eye size={18} />
@@ -149,7 +149,7 @@ export const Posts = () => {
                   {post.content.length > 200 && (
                     <button
                       onClick={() => handleView(post)}
-                      className="mt-3 text-indigo-600 hover:text-indigo-700 text-sm font-semibold inline-flex items-center gap-1"
+                      className="mt-3 text-red-600 hover:text-red-700 text-sm font-semibold inline-flex items-center gap-1"
                     >
                       Ler mais →
                     </button>
@@ -166,7 +166,7 @@ export const Posts = () => {
             {isAuthenticated && !searchTerm && (
               <button
                 onClick={() => setIsCreateModalOpen(true)}
-                className="mt-4 px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:from-indigo-700 hover:to-purple-700 transition-all shadow-md font-medium"
+                className="mt-4 px-6 py-3 bg-gradient-to-r from-red-600 to-red-600 text-white rounded-lg hover:from-red-700 hover:to-red-700 transition-all shadow-md font-medium"
               >
                 Crie Seu Primeiro Post
               </button>

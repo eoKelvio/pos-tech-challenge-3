@@ -74,7 +74,7 @@ export const UpdatePostModal = ({ isOpen, onClose, post }: UpdatePostModalProps)
               type="text"
               value={formData.title}
               onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
               placeholder="Digite o título do post..."
               required
             />
@@ -88,7 +88,7 @@ export const UpdatePostModal = ({ isOpen, onClose, post }: UpdatePostModalProps)
               value={formData.content}
               onChange={(e) => setFormData({ ...formData, content: e.target.value })}
               rows={8}
-              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none transition-all"
+              className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none transition-all"
               placeholder="Escreva o conteúdo do seu post..."
               required
             />
@@ -102,7 +102,7 @@ export const UpdatePostModal = ({ isOpen, onClose, post }: UpdatePostModalProps)
               <select
                 value={formData.type}
                 onChange={(e) => setFormData({ ...formData, type: e.target.value as PostType })}
-                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
               >
                 <option value="PUBLIC">Público</option>
                 <option value="PRIVATE">Privado</option>
@@ -116,7 +116,7 @@ export const UpdatePostModal = ({ isOpen, onClose, post }: UpdatePostModalProps)
               <select
                 value={formData.status}
                 onChange={(e) => setFormData({ ...formData, status: e.target.value as PostStatus })}
-                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
               >
                 <option value="ACTIVE">Ativo</option>
                 <option value="INACTIVE">Inativo</option>
@@ -135,7 +135,7 @@ export const UpdatePostModal = ({ isOpen, onClose, post }: UpdatePostModalProps)
             <button
               type="submit"
               disabled={updateMutation.isPending}
-              className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg hover:from-indigo-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed font-semibold transition-all shadow-md"
+              className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-600 text-white rounded-lg hover:from-red-700 hover:to-red-700 disabled:opacity-50 disabled:cursor-not-allowed font-semibold transition-all shadow-md"
             >
               {updateMutation.isPending ? 'Salvando...' : 'Salvar Alterações'}
             </button>
